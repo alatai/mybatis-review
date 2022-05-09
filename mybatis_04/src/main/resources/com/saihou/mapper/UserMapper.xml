@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saihou.mapper.UserMapper">
+    <!-- 查询所有 -->
+    <select id="findAll" resultType="com.saihou.entity.User">
+        SELECT * FROM user;
+    </select>
+
+    <!-- 保存用户 -->
+    <insert id="saveUser" parameterType="com.saihou.entity.User">
+        <!-- 配置插入操作后，获取插入数据的id -->
+        <!-- keyProperty对应实体类中的属性名 -->
+        <selectKey keyProperty="id" keyColumn="id" resultType="java.lang.Integer" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        INSERT INTO user (username, birthday, gender, address)
+        VALUES (#{username}, #{birthday}, #{gender}, #{address});
+    </insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="com.saihou.entity.User">
+        UPDATE user SET username=#{username}, birthday=#{birthday},
+                        gender=#{gender}, address=#{address}
+        WHERE id=#{id};
+    </update>
+
+    <!-- 删除用户 -->
+    <!-- 对于基本类型/包装类型，测试占位符参数可随意写 -->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        DELETE FROM user WHERE id=#{id};
+    </delete>
+
+    <!-- 根据id查询 -->
+    <select id="findById" parameterType="java.lang.Integer" resultType="com.saihou.entity.User">
+        SELECT * FROM user WHERE id=#{id};
+    </select>
+
+    <!-- 根据名称模糊查询 -->
+    <!-- 支持两种写法，value固定写法，第一种底层使用参数占位符，性能更好 -->
+    <select id="findByName" parameterType="java.lang.String" resultType="com.saihou.entity.User">
+        SELECT * FROM user WHERE username LIKE #{name};
+        <!-- SELECT * FROM user WHERE username LIKE '%${value}%'; -->
+    </select>
+
+    <!-- 查询总用户数 -->
+    <select id="findTotal" resultType="java.lang.Integer">
+        SELECT COUNT(id) FROM user;
+    </select>
+
+    <!-- 根据QueryVo中的条件查询用户 -->
+    <select id="findByQueryVo" parameterType="com.saihou.entity.QueryVo" resultType="com.saihou.entity.User">
+        SELECT * FROM user WHERE username LIKE #{user.username};
+    </select>
+</mapper>

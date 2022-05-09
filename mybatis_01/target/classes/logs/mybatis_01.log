@@ -1,0 +1,72 @@
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Opening JDBC Connection
+Created connection 1832669781.
+Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6d3c5255]
+==>  Preparing: SELECT * FROM user
+==> Parameters: 
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Opening JDBC Connection
+Created connection 186061555.
+Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@b1712f3]
+==>  Preparing: SELECT * FROM user
+==> Parameters: 
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Opening JDBC Connection
+Created connection 1988644427.
+Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@76884e4b]
+==>  Preparing: SELECT * FROM users
+==> Parameters: 
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Opening JDBC Connection
+Created connection 1988644427.
+Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@76884e4b]
+==>  Preparing: SELECT * FROM user
+==> Parameters: 
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Opening JDBC Connection
+Created connection 308889081.
+Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@126945f9]
+==>  Preparing: SELECT * FROM user
+==> Parameters: 
+<==      Total: 1
+Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+PooledDataSource forcefully closed/removed all connections.
+Opening JDBC Connection
+Created connection 1770437551.
+Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6986bbaf]
+==>  Preparing: SELECT * FROM user
+==> Parameters: 
+<==      Total: 2

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saihou.mapper.AccountMapper">
+
+    <!-- 定义封装account和user的resultMap -->
+    <resultMap id="accountResultMap" type="account">
+        <id property="id" column="id"></id>
+        <result property="uid" column="uid"></result>
+        <result property="money" column="money"></result>
+        <!-- 一对一关系映射，配置封装user的内容 -->
+        <!-- select属性的内容，指定用户的唯一标识 -->
+        <!-- column属性的内容，用户根据id查询时，所需要的参数的值 -->
+        <association property="user" column="uid" javaType="user" select="com.saihou.mapper.UserMapper.findById">
+<!--            <id property="id" column="id"></id>-->
+<!--            <result property="username" column="username"></result>-->
+<!--            <result property="birthday" column="birthday"></result>-->
+<!--            <result property="gender" column="gender"></result>-->
+<!--            <result property="address" column="address"></result>-->
+        </association>
+    </resultMap>
+
+    <!-- 查询所有 -->
+    <select id="findAll" resultMap="accountResultMap">
+        <!-- SELECT u.*, a.id as aid, a.uid, a.money FROM account a, user u WHERE u.id = a.uid; -->
+        SELECT * FROM account
+    </select>
+
+    <!-- 根据用户id查询账户列表 -->
+    <select id="findByUid" resultType="account">
+        SELECT * FROM account WHERE uid=#{uid}
+    </select>
+</mapper>

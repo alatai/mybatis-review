@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saihou.mapper.UserMapper">
+
+    <!-- 定义user的resultMap -->
+    <resultMap id="userResultMap" type="user">
+        <id property="id" column="id"></id>
+        <result property="birthday" column="birthday"></result>
+        <result property="gender" column="gender"></result>
+        <result property="address" column="address"></result>
+        <!-- 配置user对象中account集合的映射（一对多) -->
+        <collection property="accounts" column="id" ofType="account" select="com.saihou.mapper.AccountMapper.findByUid">
+        </collection>
+    </resultMap>
+
+    <!-- 查询所有 -->
+    <select id="findAll" resultMap="userResultMap">
+        SELECT * FROM user
+    </select>
+
+    <!-- 根据id查询 -->
+    <select id="findById" parameterType="java.lang.Integer" resultType="com.saihou.entity.User">
+        SELECT * FROM user WHERE id=#{id};
+    </select>
+</mapper>
